@@ -6,6 +6,22 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ##[Unreleased]
 
+##[1.1.0] - 2022-02-06
+
+###Added
+-Feature which allows user to input simple equation to be evaluated
+-Feature which reads lines of equations and evaluates them from .txt file
+
+
+###Changed
+
+
+
+
+###Removed
+
+
+
 
 ##[1.0.0] - 2022-02-03
 
@@ -18,17 +34,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 
 
-
-
-
 ##Removed
-
-
-
-
-
-
-
 
 
 
