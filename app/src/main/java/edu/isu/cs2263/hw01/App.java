@@ -5,6 +5,10 @@ package edu.isu.cs2263.hw01;
 
 import org.apache.commons.cli.*;
 
+import java.io.Console;
+import java.util.Scanner;
+import java.io.File;
+
 public class App {
 
     public static void main(String[] args) throws Exception {
@@ -34,15 +38,54 @@ public class App {
 
             if(cmd.hasOption("h") || cmd.hasOption("help")) {
                 formatter.printHelp("app  [OPTIONS] \nEvaluation of simple mathematical expressions", options);
+                return;
             }
 
             if(cmd.hasOption("b") || cmd.hasOption("batch")) {
                 System.out.println("Batch file: " + cmd.getOptionValue("batch"));
+                Equation_Evaluation eval = new Equation_Evaluation();
+
+                eval.getEquation2();
+                return;
             }
 
             if(cmd.hasOption("o") || cmd.hasOption("output")) {
                 System.out.println("Output file: " + cmd.getOptionValue("output"));
             }
+
+            else {
+                Equation_Evaluation equation = new Equation_Evaluation();
+                Scanner question = new Scanner(System.in);
+
+                boolean end = true;
+
+                while(end) {
+                    System.out.println();
+
+                    String input = equation.getEquation();
+                    System.out.println(input);
+                    System.out.println();
+
+                    System.out.println("Would you like to enter another equation? (1 = Yes) (0 = No) ");
+                    int answer = question.nextInt();
+
+                    if (answer == 1) {
+                    }
+
+                    else if (answer == 0) {
+                        System.out.println();
+                        System.out.println("Thank you for using the program!");
+                        end = false;
+                    }
+
+                    else {
+                        System.out.println("That is not a valid input.");
+                        end = false;
+                    }
+                    System.out.println();
+                }
+            }
+
 
 
 
