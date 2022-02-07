@@ -6,8 +6,14 @@ package edu.isu.cs2263.hw01;
 import org.apache.commons.cli.*;
 
 import java.io.Console;
+import java.io.PrintStream;
 import java.util.Scanner;
 import java.io.File;
+
+/***
+ * Application used for evaluating simple arithmetic using Apache Commons CLI
+ * @author Michael Esquivias
+ */
 
 public class App {
 
@@ -51,6 +57,10 @@ public class App {
 
             if(cmd.hasOption("o") || cmd.hasOption("output")) {
                 System.out.println("Output file: " + cmd.getOptionValue("output"));
+                Equation_Evaluation eval = new Equation_Evaluation();
+
+                eval.getEquation3();
+
             }
 
             else {
@@ -85,8 +95,6 @@ public class App {
                     System.out.println();
                 }
             }
-
-
 
 
         } catch (ParseException e) {
